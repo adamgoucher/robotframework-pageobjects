@@ -8,13 +8,6 @@ locators = {
 }
 
 class SignInPage(object):
-    # needed for robot framework
-    def get_keyword_names(self):
-        return ['set_sign_in_email_as',
-                'set_sign_in_password_as',
-                'submit_sign_in_credentials',
-                'sign_in_error_message_should_be']
-
     def set_sign_in_email_as(self, email):
         se = wrapper().connection
         se.type(locators["email"], email)

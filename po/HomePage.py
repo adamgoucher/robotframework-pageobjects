@@ -1,14 +1,11 @@
 from SeleniumWrapper import SeleniumWrapper as wrapper
-import LoginPage
+import SignInPage
 
 locators = {
     "sign in link": "id=M_M_M_H_H_hlkLogIn"
 }
 
 class HomePage(object):
-    def get_keyword_names(self):
-        return ['open_english_home_page', 'navigate_to_sign_in_page']
-
     def open_english_home_page(self):
         se = wrapper().connection
         se.open("/Common/HomePage.aspx?lang=EN")
