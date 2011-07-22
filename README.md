@@ -69,8 +69,8 @@ Nothing unusual there. Now let's look at the keywords associated with the Sign I
             assert se.get_text(locators['error messages']) == message
 
 A few things of note.
-  * the _wrapper_ that gets imported is a singleton connection to the Se server
-  * in a 'normal' PO, self.se would be set in the constructor, but the way RF creates objects means that it tries to make the connection before things are connected leading to non-good things happening.
-  * locators are isolated to the PO that they are used in. And they should not cross.
-  * element interaction is done in the keyword via API calls rather than through an Element instance
-  * the name of the page is in each keyword since there are not variables flying around in RF
+* the _wrapper_ that gets imported is a singleton connection to the Se server
+* in a 'normal' PO, self.se would be set in the constructor, but the way RF creates objects means that it tries to make the connection before things are connected leading to non-good things happening.
+* locators are isolated to the PO that they are used in. And they should not cross.
+* element interaction is done in the keyword via API calls rather than through an Element instance
+* the name of the page is in each keyword since there are not variables flying around in RF
