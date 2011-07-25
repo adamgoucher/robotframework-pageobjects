@@ -61,6 +61,14 @@ Nothing unusual there. Now let's look at the keywords associated with the Sign I
             se = wrapper().connection
             assert se.get_text(locators['error messages']) == message
 
+Because I am organizing things using packages there is an extra hoop you have to jump through. In the package's __init__.py you need to also create a class that takes as its super classes the other classes that hold keywords. This doesn't seem like it would scale linearly but upon thinking about it for a few minutes I realized that this would force further sub-packaging and organization which could only be seen as a good thing.
+
+    from homepage import HomePage
+    from signinpage import SignInPage
+
+    class PageObjects(HomePage, SignInPage):
+        # your top-level keywords here
+        
 A few things of note.
 
 * the _wrapper_ that gets imported is a singleton connection to the Se server
